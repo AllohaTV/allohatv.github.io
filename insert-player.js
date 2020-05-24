@@ -1,11 +1,3 @@
-function succes_function(datas) {
-	console.log(datas);
-}
-
-function error_function(datas) {
-	console.log(datas);
-}
-
 $(function(){
 	$.get('https://api.alloha.tv/', param_cdn, function(data){
 		data = $.parseJSON(data);
