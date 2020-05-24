@@ -1,5 +1,5 @@
 $(function(){
-	if ( typeof param_cdn != undefined ) { 
+	if ( typeof param_cdn !== 'undefined' ) { 
 		$.get('https://api.alloha.tv/', param_cdn, function(data){
 			data = $.parseJSON(data);
 			if ( data.status == 'success' ) {
