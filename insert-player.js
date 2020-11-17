@@ -7,7 +7,7 @@ $(function(){
 				if ( 'calback_success' in param_cdn && typeof window[param_cdn.calback_error] == 'function' ) {
 					window[param_cdn.calback_success](data);
 				} else {
-					if ( param_cdn.player_id[0] != '#' ) param_cdn.player_id = '#' + param_cdn.player_id[0];
+					if ( param_cdn.player_id[0] != '#' ) param_cdn.player_id = '#' + param_cdn.player_id;
 					$( param_cdn.player_id ).html( '<iframe frameborder="0" src="' + data.data.iframe + '" allowfullscreen></iframe>' );
 				}
 			} else {
