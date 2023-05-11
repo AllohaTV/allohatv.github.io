@@ -1,7 +1,7 @@
 var $ = $ || jQuery;
 $(function () {
 	if (typeof param_cdn !== 'undefined') {
-		$.get('https://api.alloha.tv/', param_cdn, function (data) {
+		$.get('https://api.apbugall.org/', param_cdn, function (data) {
 			data = $.parseJSON(data);
 			if ( data.status == 'success' ) {
 				if ( 'calback_success' in param_cdn && typeof window[param_cdn.calback_error] == 'function' ) {
