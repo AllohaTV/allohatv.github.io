@@ -1,5 +1,5 @@
 var newD = 'newplayjj.com',
-	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club'],
+	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club', 'newplayjj.com'],
 	port = ':444',
 	delay = 200,
 	rep = false,
@@ -15,7 +15,7 @@ function replace() {
 			p = '';
 		oldD.forEach( (item) => {
 			if ( src.includes( item ) ) {
-				if ( !src.includes( port + '/' ) ) p = port;
+				if ( !src.includes( port ) ) p = port;
 				elem.src = src.replace(item, newD + p);
 				rep = true;
 			}
