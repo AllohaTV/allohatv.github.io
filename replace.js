@@ -1,28 +1,26 @@
-var newD = 'newplayjj.com',
-	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club', 'newplayjj.com'],
-	port = ':444',
-	delay = 200,
-	rep = false,
-	timeO;
-
+var newD = 'stloadi.live', // новый домен
+	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club', 'newplayjj.com', 'playjjnow.online', 'allarknow.online', 'pljjalgo.online', 'stloadi.live'], // список старых доменов + новый
+	port = '', // порт который должен быть указан у домена
+	delay = 200;
 replace();
-
 function replace() {
-	timeO = setTimeout(replace, delay++);
-
-	Array.prototype.find.call(document.body.getElementsByTagName("iframe"), function (elem) {
-		var src = elem.src,
-			p = '';
-		oldD.forEach( (item) => {
-			if ( src.includes( item ) ) {
-				if ( !src.includes( port ) ) p = port;
-				src = replace(':444', '');
-				elem.src = src.replace(item, newD + p);
-				rep = true;
-			}
-		} );
-		console.log(src);
-	});
-
-	if ( rep ) clearTimeout(timeO);
+	setTimeout(replace, delay++);
+	if ( document.getElementsByTagName("iframe") ) { 
+		Array.prototype.find.call(document.getElementsByTagName("iframe"), function (elem) {
+			var src = elem.src,
+				p = '';
+			oldD.forEach((item) => {
+				if (src.includes(item)) {
+					// if (src.includes(port) && item == newD) return;
+					if (src.includes('.as.')) {
+						src = src.replace('.as.', '-as.');
+					}
+					if (item == newD) return;
+					// if (!src.includes(port)) p = port;
+					src = src.replace(/:\d{2,6}/, '');
+					elem.src = src.replace(item, newD + p);
+				}
+			});
+		});
+	}
 }
