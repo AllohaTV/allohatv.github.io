@@ -40,7 +40,7 @@
           var attrs = '';
           if (config.width) attrs += ' width="' + config.width + '"';
           if (config.height) attrs += ' height="' + config.height + '"';
-          container.innerHTML = '<iframe frameborder="0"' + attrs + ' src="' + iframe + '" allowfullscreen></iframe>';
+          container.innerHTML = '<iframe ' + attrs + ' src="' + iframe + '" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>';
         }
       } else {
         var onError = config.callback_error || config.calback_error;
@@ -51,7 +51,7 @@
         }
       }
     };
-
+    
     xhr.onerror = function() {
       var onError = config.callback_error || config.calback_error;
       if (onError && typeof window[onError] === 'function') {
