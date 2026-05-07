@@ -1,5 +1,5 @@
-var newD = 'stloadi.live', // новый домен
-	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club', 'newplayjj.com', 'playjjnow.online', 'allarknow.online', 'pljjalgo.online', 'stloadi.live'], // список старых доменов + новый
+var newD = 'stravers.live', // новый домен
+	oldD = ['alloeclub.com', 'allohalive.com', 'allohastream.com', 'thealloha.club', 'newplayjj.com', 'playjjnow.online', 'allarknow.online', 'pljjalgo.online', 'stloadi.live', 'stravers.live'], // список старых доменов + новый
 	port = '', // порт который должен быть указан у домена
 	delay = 200;
 replace();
